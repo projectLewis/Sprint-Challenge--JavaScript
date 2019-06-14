@@ -5,7 +5,7 @@
   Use this pattern to create your objects: 
   object name, diet, weight, length, period
 */
-class dinosaur {
+class Dinosaur {
   constructor(type) {
     this.type = type;
   }
@@ -17,38 +17,61 @@ class dinosaur {
     this.weight = weight;
     return this;
   }
-  setHeight(height) {
-    this.height = height;
+  setLength(length) {
+    this.length = length;
     return this;
   }
   setEra(era) {
     this.era = era;
     return this;
   }
+  setCry(cry) {
+    this.cry = cry;
+    return this;
+  }
+  speak() {
+    if (!this.cry) {
+      return;
+    }
+    return this.cry;
+  }
 }
-// tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
+const tyrannosaurus = new Dinosaur("tyrannosaurus")
+  .setEatingHabit("carnivorous")
+  .setWeight("7000kg")
+  .setLength("12m")
+  .setEra("Late Cretaceous")
+  .setCry(`RAWERSRARARWERSARARARRRR!`);
 
-// stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
+const stegosaurus = new Dinosaur("stegosaurus")
+  .setEatingHabit("herbivorous")
+  .setWeight("2000kg")
+  .setLength("9m")
+  .setEra("Late Jurassic");
 
-// velociraptor, carnivorous, 15kg, 1.8m, Late Cretaceous
+const velociraptor = new Dinosaur("velociraptor")
+  .setEatingHabit("carnivorous")
+  .setWeight("15kg")
+  .setLength("1.8m")
+  .setEra("Late Cretaceous");
 
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(tyrannosaurus.weight);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(velociraptor.eatingHabit);
 
 // How long was a stegosaurus?
-console.log();
+console.log(stegosaurus.length);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(tyrannosaurus.era);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+console.log(tyrannosaurus.speak());
 
 
 // ==== Arrays ====
